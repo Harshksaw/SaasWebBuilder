@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
+
 const inter = Inter({ subsets: ["latin"] });
-import { shadesOfPurple } from "@clerk/themes";
+
 import { ThemeProvider } from "@/providers/theme-provider";
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider appearance={{ baseTheme: shadesOfPurple }}>
+
       <html lang="en">
         <body className={inter.className}>
           <ThemeProvider
@@ -30,6 +30,6 @@ export default function RootLayout({
           </ThemeProvider>
         </body>
       </html>
-    </ClerkProvider>
+
   );
 }
